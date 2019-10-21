@@ -5,18 +5,21 @@ class ReadExcel(object):
         self.sheet=self.wb.get_sheet_by_name(excelsheet)
         self.maxRownum=self.sheet.max_row#获取最大行数
         self.maxColumn=self.sheet.max_column#获取最大列数
+        #print(self.maxRownum,self.maxColumn)
 
 
     def getValue(self):
         datalist=[]
-        for row in self.sheet.rows[0:self.maxRownum]:
+        for row in self.sheet.rows[1:self.maxRownum]:
             list=[]
             for column in range(self.maxColumn):
                 list.append(row[column].value)
             datalist.append(list)
-        print(datalist)
+        return datalist
+
 
 
 if __name__=="__main__":
     value=ReadExcel(r"G:\Myproject\ExcelUtil\test2.xlsx","Sheet1")
-    value.getValue()
+    print(value.getValue())
+

@@ -2,6 +2,8 @@ import HTMLTestRunner_PY3
 import unittest
 import os
 import time
+from EmailSendCommon import EmailSendpy
+email=EmailSendpy.EmailSend("979669145@qq.com")
 case_path=r"G:\API_project_test\ApiTestCase"
 if __name__=="__main__":
     discover=unittest.defaultTestLoader.discover(case_path,pattern="*case.py")
@@ -13,3 +15,4 @@ if __name__=="__main__":
     runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=report,title="接口自动化测试报告",description="xxx项目接口测试结果:")
     runner.run(suite)
     report.close()
+    email.Send()
