@@ -11,9 +11,9 @@ class TestDome(unittest.TestCase):
         logger.info("执行员工工资计算用例")
         "员工工资计算用例"
         try:
-            val1, val2, val3 = tuple(data)
-            sum=val1+val2+val3
-            self.assertEqual(sum,6)
+            val1, val2, val3,sum= tuple(data)
+            sum1=val1+val2+val3
+            self.assertEqual(sum1,sum)
         except AssertionError as e:
             logger.error("测试结果错误"+str(e))
             raise AssertionError
