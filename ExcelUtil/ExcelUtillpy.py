@@ -12,7 +12,7 @@ class ReadExcel(object):
         datalist=[]
         for row in self.sheet.rows[1:self.maxRownum]:
             list=[]
-            for column in range(self.maxColumn):
+            for column in range(3,self.maxColumn):
                 list.append(row[column].value)
             datalist.append(list)
         return datalist
@@ -20,6 +20,6 @@ class ReadExcel(object):
 
 
 if __name__=="__main__":
-    value=ReadExcel(r"G:\Myproject\ExcelUtil\test2.xlsx","Sheet1")
+    value=ReadExcel(r"G:\API_project_test\ExcelFile\casedata.xlsx", "API_Add_Org_Data")
     print(value.getValue())
 
