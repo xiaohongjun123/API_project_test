@@ -17,16 +17,16 @@ class ReadExcel(object):
             datalist.append(list)
         return datalist
 
-    def writeValue(self):
+    def writeValue(self,results):
         for row in range(1,self.maxRownum):
             for column in range(1,self.maxColumn+1):
                 if self.sheet.cell(row=row,column=column).value==None and self.sheet.cell(row=row,column=column+1).value==None:
-                    self.sheet.cell(row=row,column=column).value="pass"
+                    self.sheet.cell(row=row,column=column).value=results
                 self.wb.save(r"G:\API_project_test\ExcelFile\casedata1.xlsx")
 
 
 
 if __name__=="__main__":
     value=ReadExcel(r"G:\API_project_test\ExcelFile\casedata.xlsx", "API_Add_Org_Data")
-    value.writeValue()
+    value.writeValue("Pass")
 
