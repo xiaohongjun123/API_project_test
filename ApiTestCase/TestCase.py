@@ -27,6 +27,10 @@ class TestDome(unittest.TestCase):
         r = requests.post(url, data=payload, headers=self.head)
         self.assertEqual(r.json()["msg"],expect_result)
 
+    def tearDown(self):
+        pass
+
+
 
 
 if __name__=="__main__":
